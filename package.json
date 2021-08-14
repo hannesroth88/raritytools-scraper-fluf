@@ -1,0 +1,21 @@
+{
+  "name": "rarity-check-fluf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.13.1"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
+    "node-schedule": "^2.0.0",
+    "playwright": "^1.13.1"
+  }
+}
