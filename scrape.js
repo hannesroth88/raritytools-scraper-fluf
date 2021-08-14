@@ -50,6 +50,7 @@ async function main() {
     const delayedStart = new Date(new Date().getTime() + (delayHours * 3600 * 1000)) // delay the first Jobrun
     console.log('\n### Starting Engines ###')
     console.log('First job on ' + dateToLocalDateString(delayedStart) + '\n')
+    sendDiscord('First job on ' + dateToLocalDateString(delayedStart) + '\n');
 
     jobs['rarityCheckerJob'] = schedule.scheduleJob(delayedStart, async () => {
 
@@ -57,7 +58,6 @@ async function main() {
             // calculate next job
             var nextSchedule = new Date(new Date().getTime() + 60 * intervallMin * 1000);
             console.log('Reschedule rarityCheckerJob at ' + dateToLocalDateString(nextSchedule));
-            sendDiscord('Reschedule rarityCheckerJob at ' + dateToLocalDateString(nextSchedule));
             jobs['rarityCheckerJob'].reschedule(nextSchedule);
         })
 
