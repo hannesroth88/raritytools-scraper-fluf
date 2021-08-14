@@ -4,9 +4,9 @@ const Discord = require('discord.js');
 var fs = require('fs');
 var schedule = require('node-schedule');
 const filePath = 'example.png'
-const maxPrice = 1
+const maxPrice = 5
 const maxRarity = 2000
-const intervallMin = 10
+const intervallMin = 1
 
 function delay(time) {
     return new Promise(function (resolve) {
