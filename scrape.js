@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 var fs = require('fs');
 var schedule = require('node-schedule');
 const filePath = 'example.png'
-const maxPrice = 5
+const maxPrice = 0.8
 const maxRarity = 2000
 const intervallMin = 1
 
@@ -76,8 +76,8 @@ async function runJob() {
             await sendDiscordFile('Found NFT for your Filter:    maxPrice:' + maxPrice + '   maxRarity:' + maxRarity, filePath)
             fs.unlinkSync(filePath)
         })
-        .catch(e => console.log("no NFT found" + e)).finally(
-            await browser.close())
+        .catch(e => console.log("no NFT found" + e)).finally(async() => {await browser.close()})
+    
 };
 
 
